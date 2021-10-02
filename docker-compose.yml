@@ -1,12 +1,12 @@
 version: "3.4"
 services:
   api:
-    image: docker.pkg.github.com/itwasnoteasy/new-cicd-lab-files/mcw-continous-delivery-api:main
+    image: docker.pkg.github.com/itwasnoteasy/new-cicd-lab-files/fabrikam-api:main
     ports:
       - "3001:3001"
 
   web:
-    image: docker.pkg.github.com/itwasnoteasy/new-cicd-lab-files/mcw-continous-delivery-web:main
+    image: docker.pkg.github.com/itwasnoteasy/new-cicd-lab-files/fabrikam-web:main
     depends_on:
         - api
     environment:
