@@ -5,6 +5,10 @@ const request = require('request');
 
 const app = express();
 
+const appInsights = require("applicationinsights");         # <-- Add these lines here
+appInsights.setup("55adcc27-c041-43a4-a7cc-17f05a68c86f");  # <-- Make sure AI Inst. Key matches
+appInsights.start();                                        # <-- key from step 2.
+
 app.use(express.static(path.join(__dirname, 'dist/content-web')));
 const contentApiUrl = process.env.CONTENT_API_URL || "http://localhost:3001";
 
